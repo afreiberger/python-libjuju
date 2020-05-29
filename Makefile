@@ -48,6 +48,7 @@ upload: release
 .PHONY: install-deb-build-deps
 install-deb-build-deps:
 	sudo apt install -y python3-all debhelper sbuild schroot ubuntu-dev-tools
+	tox -e py3 --notest
 	$(PIP) install stdeb
 
 .PHONY: build-deb
